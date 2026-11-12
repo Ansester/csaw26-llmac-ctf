@@ -4,11 +4,18 @@
 wrapper) — this task needs unrestricted Bash, Docker, apt/pip installs, and
 gdb/ptrace, the same way the 2025 run of this CTF needed them.
 
-**Model:** the most capable Opus model available (e.g. `claude-opus-4-5` /
-`claude-opus-4-8`, whichever is current) for the WHOLE run. This set includes
-lattice cryptanalysis, heap exploitation, a custom VM/bytecode reverse, and an
-audio-domain (Pure Data) reverse — none of these reward a cheaper model, and
-since the goal is winning, don't trade quality for cost here.
+**Model: you're on a Claude Max 5x subscription, shared across all 6
+parallel sessions — default to Sonnet, not Opus.** Launch with
+`claude --model sonnet`. All 6 sessions draw on the SAME account's rolling
+rate-limit window; Opus consumes that shared pool much faster per message
+than Sonnet, so running all 6 sessions on Opus risks throttling every session
+at once, not just the one that's spending. Sonnet is plenty capable for
+verification work against a reference solve.py/writeup, which is most of this
+set (15/22 challenges ship one). Switch to Opus ONLY for your category's one
+blind, no-reference challenge (see YOUR SCOPE below for which one that is),
+via the in-session `/model opus` command right before starting it, then
+`/model sonnet` again once it's solved or you move to a reference-backed
+challenge.
 
 **Permission mode:** full autonomy. Launch with
 `claude --dangerously-skip-permissions` (or the equivalent "bypass
