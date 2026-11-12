@@ -39,9 +39,14 @@ ENVIRONMENT SETUP (do this first, once)
 
 2. Clone the solutions repo (your write target):
      git clone https://github.com/Ansester/csaw26-llmac-ctf.git
-   This is where every solver, writeup, and FLAGS.md entry gets committed and
-   pushed. Commit after EACH challenge is solved (not one giant commit at the
-   end) so progress survives a crash or timeout. `git push` after every commit.
+     cd csaw26-llmac-ctf
+     git checkout -b web
+   web is given in your scope section below — OTHER sessions are working
+   on this SAME repo in parallel, each on its own branch, so staying on your
+   own branch and never touching `master` or another category's branch is
+   required to avoid stepping on their commits. Commit after EACH challenge is
+   solved (not one giant commit at the end) so progress survives a crash or
+   timeout, and `git push -u origin web` after every commit.
 
 3. Python: make a venv with pycryptodome, pwntools, gmpy2, requests, sympy
    (needed for crypto/secret_treaties' lattice work — pwntools pulls `unicorn`,
