@@ -1,50 +1,44 @@
 #!/usr/bin/env python3
-"""Usage: solve_house_of_hollow_houses.py HOST PORT   (walks the maze by decoding each room's hint)"""
-import re, sys, base64, html, urllib.request
+"""House of Hollow Houses solver. Usage: solve_house_of_hollow_houses.py HOST PORT"""
+import sys, re, base64, urllib.request
 
 host, port = sys.argv[1], sys.argv[2]
-def get(path):
-    return urllib.request.urlopen(f"http://{host}:{port}{path}", timeout=10).read().decode()
+def get(p):
+    return urllib.request.urlopen(f"http://{host}:{port}{p}").read().decode()
 
-MORSE = {'.-':'A','-...':'B','-.-.':'C','-..':'D','.':'E','..-.':'F','--.':'G','....':'H','..':'I',
-         '.---':'J','-.-':'K','.-..':'L','--':'M','-.':'N','---':'O','.--.':'P','--.-':'Q','.-.':'R',
-         '...':'S','-':'T','..-':'U','...-':'V','.--':'W','-..-':'X','-.--':'Y','--..':'Z'}
-
-# 1. robots.txt -> disallowed room
+# 0. robots.txt -> Disallow: /atrium/
 room = re.search(r"Disallow:\s*/(\w+)/", get("/robots.txt")).group(1)
 print("robots ->", room)
 
-# 2. atrium: first letters of the CSS-hidden <span class="h"> spell the next room
-page = get(f"/{room}/")
-room = "".join(re.findall(r'<span class="h">(.)</span>', page)).lower()
+# 1. atrium: letters wrapped in <span class="h"> (opacity .07) spell the next room
+room = "".join(re.findall(r'<span class="h">(.)</span>', get(f"/{room}/"))).lower()
 print("hidden letters ->", room)
 
-# 3. ossuary: base64 rite -> sentence; the noun in it that is a linked room is next
-page = get(f"/{room}/")
-rite = base64.b64decode(re.search(r'<code class="rite[^>]*>([^<]+)</code>', page).group(1)).decode()
-linked = set(re.findall(r'href="/(\w+)/"', page))
-room = next(w for w in re.findall(r"[a-z]+", rite) if w in linked)
-print("rite:", rite, "->", room)
+# 2. ossuary: base64 'rite' -> "what the mirror sees, the mirror keeps"
+code = re.search(r'<code class="rite[^>]*>([^<]+)</code>', get(f"/{room}/")).group(1)
+sent = base64.b64decode(code).decode()
+print("rite ->", sent)
+room = re.search(r"the (\w+) keeps$", sent).group(1)   # 'mirror'
 
-# 4. mirror: text is scaleX(-1) flipped (visual only); the "next chamber is called the <a>" names it
-page = get(f"/{room}/")
-room = re.search(r"next chamber is called the <a href=\"/(\w+)/\"", page).group(1)
+# 3. mirror: page text is scaleX(-1) mirrored; it names 'the next chamber is called the wellspring'
+room = re.search(r"next chamber is called the (?:<[^>]*>)*(\w+)", get(f"/{room}/")).group(1)
 print("mirror ->", room)
 
-# 5. wellspring: morse in word-gap widths (1 space=dot, 3=dash; line=letter; blank line=word)
-page = get(f"/{room}/")
-elegy = html.unescape(re.search(r'<pre class="elegy">(.*?)</pre>', page, re.S).group(1))
-msg = []
-for word in elegy.split("\n\n"):
-    letters = ""
-    for line in word.split("\n"):
-        gaps = re.findall(r" +", line.strip())
-        letters += MORSE["".join("-" if len(g) >= 3 else "." for g in gaps) or "."] if gaps or line.strip() else ""
-    msg.append(letters)
-text = " ".join(msg)
-print("morse:", text)
-room = text.split()[-1].lower()
+# 4. wellspring: poem, one line per letter, one stanza per word. A line's letter is
+#    determined by its 'segment signature' = words per run, runs split by 3-space gaps.
+SIG = {  # signature -> letter (table recovered from the 30 poem lines, see WRITEUP)
+ (1,1):'T',(5,):'H',(2,):'E',(3,2):'F',(2,3):'L',(2,1):'A',(1,1,2):'G',(3,):'I',(4,):'S',
+ (2,1,1):'W',(1,2):'N',(1,2,2):'C',(3,1):'U',(1,1,1):'M'}
+pre = re.search(r'<pre[^>]*>(.*?)</pre>', get(f"/{room}/"), re.S).group(1)
+words = []
+for stanza in pre.strip().split("\n\n"):
+    w = ""
+    for line in stanza.split("\n"):
+        sig = tuple(len(s.split()) for s in re.split(r" {2,}", line.strip()))
+        w += SIG[sig]
+    words.append(w.lower())
+print("poem ->", " ".join(words))
+room = words[-1]  # 'sanctum'
 
-# 6. sanctum
-flag = re.search(r"csaw\{[^}]*\}", get(f"/{room}/")).group(0)
-print(flag)
+# 5. final room
+print(re.search(r'<span class="flag[^>]*>([^<]+)</span>', get(f"/{room}/")).group(1))
