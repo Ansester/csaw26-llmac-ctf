@@ -1,0 +1,7 @@
+{"type":"launched"}
+{"type":"started","key":"v2:1c8a83636b3c1b1965d443dd37a21e0db70b5d435132eccb4c5bff806e5390e5","agentId":"a16f9c7db5bdcb936","label":"misc:spectrogram-bitmap","phase":"Solve"}
+{"type":"started","key":"v2:1e758f14c505b36576eea4e87530cdeb6a588f9785fd7c0f33536ce13bc81592","agentId":"a14fbb3fcae439e2c","label":"rev:live-purrdata","phase":"Solve"}
+{"type":"started","key":"v2:736d17075768e408ff8fa3c5310cbe9108a0c6d156fcfd3e14a862ca01047388","agentId":"a77404b09153c8849","label":"rev:static-emulate","phase":"Solve"}
+{"type":"started","key":"v2:0d851a2242c7e684803f3c7cf953e16450749f1825c76f8b69d347d35d3b2cb3","agentId":"a45039657e26c55af","label":"misc:tone-fsk-burst","phase":"Solve"}
+{"type":"started","key":"v2:79273e88afb0f70bb2b36cce283911ef9d50c000d333d71b2d77dc1db7b85e92","agentId":"aa3a7b106f7ee6d13","label":"misc:dtmf-and-alt-domains","phase":"Solve"}
+{"type":"started","key":"v2:cc0659a75d4c4c26f52520707cd2f406b3edf0a0b3267b53fefd14d867394452","agentId":"a79c453c92b2f89ec","label":"misc:carrier-chunks-and-conventions","phase":"Solve"}

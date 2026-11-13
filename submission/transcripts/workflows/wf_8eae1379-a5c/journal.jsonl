@@ -1,0 +1,4 @@
+{"type":"launched"}
+{"type":"started","key":"v2:3f0f3f524005495e2ad538946e29ce0a43cb94d49bd70a196d74f9ab436dcb47","agentId":"a4643cea19d4f7c14","label":"rev:engine-inversion","phase":"Solve"}
+{"type":"started","key":"v2:89ff1361bdd8287da139730771a83c136e8b8956098e4ac436ed5c11662a8f9b","agentId":"aafcb21c3a72c1f1e","label":"misc:locate","phase":"Solve"}
+{"type":"started","key":"v2:4976ede7356cbb60580d89f597947ff3b5d9e9b5d06ee527ad22f9ff90d6e4d6","agentId":"a11016171e02ba0ff","label":"misc:decode","phase":"Solve"}

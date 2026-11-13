@@ -1,0 +1,1 @@
+{"agentType":"workflow-subagent","isBuiltIn":true,"description":"rev:static-emulate","workflowPhase":"Solve","spawnDepth":1,"requestShape":"foreground","requestNonInteractive":false,"pickedEffortModel":"claude-opus-4-8"}
