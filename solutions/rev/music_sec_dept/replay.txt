@@ -1,0 +1,21 @@
+
+=[ CSIRAC CDJ-4562 ]==========================
+ MUSIC SECURITY DEPARTMENT :: DRM enforcement unit
+ unit CSIRAC   project I_LOVE_MY_COMPUTER
+ 1 stem SEALED -- type HELP
+
+CSIRAC>  decks 1-6 loaded
+
+CSIRAC>  beatsync enabled
+
+CSIRAC>  filter set
+
+CSIRAC>  keymatching enabled
+
+CSIRAC>  transport rolling
+
+ rendering stem ...
+
+ csaw{~i_love_my_computer_&_it_loves_me~<3}
+
+CSIRAC> 

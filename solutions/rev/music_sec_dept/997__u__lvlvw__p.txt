@@ -1,0 +1,3 @@
+0: #X obj 180 230 inlet;
+1: #X obj 180 260 outlet;
+#X connect 0 0 1 0;

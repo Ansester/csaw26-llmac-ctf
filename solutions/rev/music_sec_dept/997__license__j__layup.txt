@@ -1,0 +1,11 @@
+0: #X restore 140 230 pd src;
+1: #X msg 140 260 \; padbus in \; seekh in \; , f 14;
+2: #X restore 140 200 pd peek;
+3: #X obj 120 120 inlet;
+4: #X obj 120 330 outlet;
+5: #X obj 120 160 t a b;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 5 1 2 0;

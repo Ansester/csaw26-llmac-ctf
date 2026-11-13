@@ -1,0 +1,11 @@
+0: #X floatatom 330 180 5 0 0 0 - - - , f 5;
+1: #X symbolatom 270 180 5 0 0 0 - - - , f 5;
+2: #X obj 130 240 makefilename 0x%.2X;
+3: #X obj 330 130 inlet;
+4: #X obj 330 240 outlet;
+#X connect 0 0 2 0;
+#X connect 0 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+5: #X coords 0 -1 1 1 122 32 2 265 175;
+6: #X scroll 1;

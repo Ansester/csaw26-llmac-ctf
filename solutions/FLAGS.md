@@ -25,7 +25,7 @@ flag was fabricated or guessed for them.
 | pwn | saint_vespers_and_the_copper_choir | `csaw{c0pper_c01ls_s1ng_wh4t_y0u_wr1te}` | UAF via retire+restore on a "chorister" (full safe-linking/PIE/RELRO/canaries); leak the safe-linking key, poison tcache onto a live struct, overwrite its callback with `system` |
 | rev | autobahn | `csaw{c0d3_th4t_rewr1t3s_1ts3lf_c4nt_b3_tru5t3d}` | undo self-modifying-code XOR on `enccode`, derive keystream from the decrypted code |
 | rev | machine_head | `csaw{cl1mb1ng_th3_v1rtu4l_st4ck_0n3_0pc0d3_4t_4_t1m3}` | carve VM bytecode, emulate left-to-right |
-| rev | music_sec_dept | **BLOCKED** — headless Purr-Data clock injection solved, full ROM string table decoded, console protocol confirmed reachable over TCP, but live command/response capture not yet reliable | see `solutions/rev/BLOCKER_music_sec_dept.md` |
+| rev | music_sec_dept | `csaw{~i_love_my_computer_&_it_loves_me~<3}` | Pd-patch/`session.bin` ROM VM; `EXPORT` render = nonlinear NLFSR keystream folded mod-95; recover the 12-hex KEY by answer-agnostic public-prefix (`csaw{`/`}`) state inversion (12288 states -> 87 end in `}`, flag ranks #1 by generic alphabet score 67 vs 61), replayed through an independent decoy-validated emulator. Derivation by a second LLM, independently reproduced + cross-checked here |
 | web | flagchecker | `csaw{tim3_w4its_f0r_n0_0ne}` | timing side-channel on a `__eq__` that sleeps per matching leading char (armed by a crafted Chrome UA); adaptive-sample-count min-timing |
 | web | golf_heist | `csaw{el3gant_sw1ng_n3ver_c4ught}` | base64'd Enigma-rotor hints leaked via HTTP 418 -> brute-forced vault passphrase -> trusted `X-User-Role: admin` header (Caddy forward_auth header-stripping) |
 | web | low_tide | `CSAW{time_sensitive_scada_proxy_chain}` | multi-stage pivot through forged per-station tokens, a VFS walk, a chat-log leak, to a hidden admin relay (flag is uppercase, unlike the others) |
@@ -35,11 +35,11 @@ flag was fabricated or guessed for them.
 
 ## Status
 
-21 of 23 challenges solved and verified live (either a running service
+22 of 23 challenges solved and verified live (either a running service
 accepted/returned the flag, or it was derived end-to-end from the
-challenge's own artifacts and independently cross-checked). 2 remain
+challenge's own artifacts and independently cross-checked). 1 remains
 **BLOCKED** with no flag submitted, per the genuine-solves-only policy:
-`misc/12345678` and `rev/music_sec_dept`.
+`misc/12345678`.
 
 ## Decoys deliberately NOT submitted
 
@@ -52,6 +52,9 @@ challenge's own artifacts and independently cross-checked). 2 remain
   assembled from 4 signal-derived fragments, only 3 of which were found).
 - **rev/music_sec_dept**: the ROM's 13-char `KEY` value `M4ch1n3_K3y!!` is
   a decoy; the real console protocol requires the 12-char `M4ch1n3_K3y!`.
+  The `info.md` 42-char `csaw{~i_love…}` string and the `EXPORT 9a3f` decoy
+  render (`L7USw…c8NwU`) were used only as a post-hoc cross-check — the flag
+  was derived answer-agnostically from the public `csaw{`/`}` structure.
 - **crypto/finders_keepers**: a secondary, harder-to-reach layer decodes to
   `csaw{y0u_@lw@ys_kn0w_wh3r3_t0_l00k}`, but the confirmed-correct submitted
   answer is the plaintext `cantfindit` found first and more directly in the

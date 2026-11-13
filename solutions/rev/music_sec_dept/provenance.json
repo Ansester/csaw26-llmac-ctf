@@ -1,0 +1,146 @@
+{
+  "source_artifacts": {
+    "hidden_patch.pd": {
+      "path": "/Users/ashmit/Desktop/challenge-repo/2026/CSAW-Quals/rev/music_sec_dept/csirac/hidden_patch.pd",
+      "sha256": "86e648375a8cb3d587f3ac9d803fd2050c6f8aa5f28b9b435837f7805b2808fe"
+    },
+    "session.bin": {
+      "path": "/Users/ashmit/Desktop/challenge-repo/2026/CSAW-Quals/rev/music_sec_dept/csirac/session.bin",
+      "sha256": "a4e79ddcb9a9ef4d11348d3de7423aed18ba21549807a6b39ddda9784c9c81f7"
+    }
+  },
+  "excluded_sources": [
+    "web writeups",
+    "info.md",
+    "challenge.json",
+    "external emulator implementations"
+  ],
+  "method": "Independent Pure Data dispatch reconstruction; neutral-key checkpoints; enumeration constrained only by public csaw{ prefix and } suffix; generic letters/digits/underscore ranking. No expected flag body or solution key supplied to this solver.",
+  "model_limits": "Models all artifact-exercised opcode paths and ignores disconnected opcodes10/11; signal UI/drawing not emulated.",
+  "commands": [
+    "CUE IKOW[g",
+    "SYNC",
+    "EQ music'_'",
+    "KEY bf03942fbd12",
+    "EXPORT 9a3f......"
+  ],
+  "checkpoints": [
+    {
+      "command": "BOOT",
+      "state": {
+        "pc": "0x212",
+        "registers": [
+          0,
+          16,
+          58,
+          58
+        ],
+        "pb34_39": "4d5344213799",
+        "pb85_8a": "7b810a020000",
+        "key": "810d42fd5106",
+        "out": "\n=[ CSIRAC CDJ-4562 ]==========================\n MUSIC SECURITY DEPARTMENT :: DRM enforcement unit\n unit CSIRAC   project I_LOVE_MY_COMPUTER\n 1 stem SEALED -- type HELP\n\nCSIRAC> ",
+        "steps": 212,
+        "q": []
+      }
+    },
+    {
+      "command": "CUE IKOW[g",
+      "state": {
+        "pc": "0x212",
+        "registers": [
+          0,
+          16,
+          58,
+          58
+        ],
+        "pb34_39": "4d5344213799",
+        "pb85_8a": "7b810a020000",
+        "key": "810d42fd5106",
+        "out": "\n=[ CSIRAC CDJ-4562 ]==========================\n MUSIC SECURITY DEPARTMENT :: DRM enforcement unit\n unit CSIRAC   project I_LOVE_MY_COMPUTER\n 1 stem SEALED -- type HELP\n\nCSIRAC>  decks 1-6 loaded\n\nCSIRAC> ",
+        "steps": 460,
+        "q": []
+      }
+    },
+    {
+      "command": "SYNC",
+      "state": {
+        "pc": "0x212",
+        "registers": [
+          0,
+          16,
+          58,
+          58
+        ],
+        "pb34_39": "4d5344213799",
+        "pb85_8a": "7b810a020000",
+        "key": "810d42fd5106",
+        "out": "\n=[ CSIRAC CDJ-4562 ]==========================\n MUSIC SECURITY DEPARTMENT :: DRM enforcement unit\n unit CSIRAC   project I_LOVE_MY_COMPUTER\n 1 stem SEALED -- type HELP\n\nCSIRAC>  decks 1-6 loaded\n\nCSIRAC>  beatsync enabled\n\nCSIRAC> ",
+        "steps": 642,
+        "q": []
+      }
+    },
+    {
+      "command": "EQ music'_'",
+      "state": {
+        "pc": "0x212",
+        "registers": [
+          0,
+          16,
+          58,
+          58
+        ],
+        "pb34_39": "4d5344213799",
+        "pb85_8a": "7b810a020000",
+        "key": "810d42fd5106",
+        "out": "\n=[ CSIRAC CDJ-4562 ]==========================\n MUSIC SECURITY DEPARTMENT :: DRM enforcement unit\n unit CSIRAC   project I_LOVE_MY_COMPUTER\n 1 stem SEALED -- type HELP\n\nCSIRAC>  decks 1-6 loaded\n\nCSIRAC>  beatsync enabled\n\nCSIRAC>  filter set\n\nCSIRAC> ",
+        "steps": 886,
+        "q": []
+      }
+    },
+    {
+      "command": "KEY bf03942fbd12",
+      "state": {
+        "pc": "0x212",
+        "registers": [
+          0,
+          16,
+          58,
+          58
+        ],
+        "pb34_39": "4d5344213799",
+        "pb85_8a": "7b810a020000",
+        "key": "bf03942fbd12",
+        "out": "\n=[ CSIRAC CDJ-4562 ]==========================\n MUSIC SECURITY DEPARTMENT :: DRM enforcement unit\n unit CSIRAC   project I_LOVE_MY_COMPUTER\n 1 stem SEALED -- type HELP\n\nCSIRAC>  decks 1-6 loaded\n\nCSIRAC>  beatsync enabled\n\nCSIRAC>  filter set\n\nCSIRAC>  keymatching enabled\n\nCSIRAC> ",
+        "steps": 1354,
+        "q": []
+      }
+    },
+    {
+      "command": "EXPORT 9a3f......",
+      "state": {
+        "pc": "0x212",
+        "registers": [
+          0,
+          16,
+          58,
+          58
+        ],
+        "pb34_39": "000000000000",
+        "pb85_8a": "000000000000",
+        "key": "bf03942fbd12",
+        "out": "\n=[ CSIRAC CDJ-4562 ]==========================\n MUSIC SECURITY DEPARTMENT :: DRM enforcement unit\n unit CSIRAC   project I_LOVE_MY_COMPUTER\n 1 stem SEALED -- type HELP\n\nCSIRAC>  decks 1-6 loaded\n\nCSIRAC>  beatsync enabled\n\nCSIRAC>  filter set\n\nCSIRAC>  keymatching enabled\n\nCSIRAC>  transport rolling\n\n rendering stem ...\n\n csaw{~i_love_my_computer_&_it_loves_me~<3}\n\nCSIRAC> ",
+        "steps": 9039,
+        "q": []
+      }
+    }
+  ],
+  "recovery": {
+    "argument": "9a3f......",
+    "q": "e72566c38389",
+    "key": "bf03942fbd12",
+    "state": "7284f904976b",
+    "candidate_file": "recovery_9a3f______.json",
+    "all_prefix_file": "all_prefix_9a3f______.json"
+  },
+  "argument_semantics": "Four literal leading bytes consumed via port253. Six following filler bytes influence queue length via port254; filler contents are discarded. Raw LF required; no extra queued commands. During fourpasses pb[251],pb[252],port253,port254,pb[255],pb[0],pb[1],pb[2] feed nonlinear state mixer."
+}

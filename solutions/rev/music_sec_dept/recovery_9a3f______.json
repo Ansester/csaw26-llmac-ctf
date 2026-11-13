@@ -1,0 +1,556 @@
+{
+  "export_argument": "9a3f......",
+  "q": "e72566c38389",
+  "neutral_state": "006a6435e9da",
+  "neutral_output": "3Y+InL9FF.6mW\\$WA:ca`{b0RADv \"o'KD:j\"Wk`5-",
+  "prefix_choices": [
+    [
+      114,
+      209
+    ],
+    [
+      37,
+      132
+    ],
+    [
+      59,
+      154,
+      249
+    ],
+    [
+      4,
+      99
+    ],
+    [
+      151,
+      246
+    ],
+    "all 256"
+  ],
+  "prefix_count": 12288,
+  "suffix_count": 87,
+  "suffix_candidates": [
+    {
+      "key": "bf03942fbd12",
+      "state": "7284f904976b",
+      "text": "csaw{~i_love_my_computer_&_it_loves_me~<3}",
+      "score": 67
+    },
+    {
+      "key": "5ea032a3864e",
+      "state": "d1849a04f6fb",
+      "text": "csaw{mFM20CLbV@Q6T[f5z<FQ oL0Mnke8Q7Zs_pC}",
+      "score": 61
+    },
+    {
+      "key": "38f7d8308964",
+      "state": "7225f90497e9",
+      "text": "csaw{[#_G4oNGqJ*`;oOoOs:L#yPmq8hviYpXqI,s}",
+      "score": 26
+    },
+    {
+      "key": "38f7d83919ef",
+      "state": "7225f90497a0",
+      "text": "csaw{TfE&ZAVG71LT!+0]QysIKSJ@CAoM(q_^aBO#}",
+      "score": 25
+    },
+    {
+      "key": "2dfbe3be3a6d",
+      "state": "d1259a639793",
+      "text": "csaw{G3M&yvkC>pH'PPO/Zg89$Yg4N_*vJqr0c\"A%}",
+      "score": 23
+    },
+    {
+      "key": "92e4fbc06994",
+      "state": "d125f9049759",
+      "text": "csaw{lBtmO7]H]\\sVXv\"_9UBIRFvo\\aX)h1|q|D@S}",
+      "score": 15
+    },
+    {
+      "key": "5bd3720cc3f0",
+      "state": "d1843b63f66c",
+      "text": "csaw{ 0(OdF2EZZjp|*K#za.Na/09UvMRHlL*FsU\\}",
+      "score": 14
+    },
+    {
+      "key": "d60b440747a1",
+      "state": "72253b049706",
+      "text": "csaw{x0-FPQa?c;67A{g&V@`DIyA`j5pzfqxu_2D~}",
+      "score": 13
+    },
+    {
+      "key": "513c51e2978a",
+      "state": "72843b63f6ea",
+      "text": "csaw{\\&Ni3EQ^2^HM.Vv%w9ZrJA=85k|jJDoWt;2_}",
+      "score": 12
+    },
+    {
+      "key": "5b287b064781",
+      "state": "d1843b049766",
+      "text": "csaw{yG'CUH>U:NVAzClJBt&2\"GTShV-f@/RE\"U`F}",
+      "score": 7
+    },
+    {
+      "key": "d38440e60ae5",
+      "state": "72259a6397db",
+      "text": "csaw{Mypy;;xa*O_Cahz*$4W\"Yc;`DX+HVuLX6Hi.}",
+      "score": 6
+    },
+    {
+      "key": "5b287b8e6729",
+      "state": "d1843b0497be",
+      "text": "csaw{0Y+%Pj.KnVvVf3Q*EI+LZ&QG|g#y9fNa$f<C}",
+      "score": 5
+    },
+    {
+      "key": "488ff1c29af1",
+      "state": "72849a04f6f6",
+      "text": "csaw{h#wc<OwNzc A^R~2-6x}EA]A0^VG5qCyHM(k}",
+      "score": 4
+    },
+    {
+      "key": "5ea032deb255",
+      "state": "d1849a04f6d2",
+      "text": "csaw{DtV6\"fB]+4c1Q&ag}ttD4N~7XD_;?qF>BH!d}",
+      "score": 3
+    },
+    {
+      "key": "7c4b5ec153ac",
+      "state": "d1253b63f6f8",
+      "text": "csaw{j!F4I;O}>xfHYfP:6A05DH<]Iz{I^mw1!1PX}",
+      "score": 2
+    },
+    {
+      "key": "488ff16146d4",
+      "state": "72849a04f699",
+      "text": "csaw{MJFsb:3^XWAbA$]Mus\\$Dy2h$+BJ~;ovG,GZ}",
+      "score": -4
+    },
+    {
+      "key": "2d3897336e05",
+      "state": "d1259a0497b2",
+      "text": "csaw{$ZfTIA-y^QaPAfz-30S%*pg\\7*~fDJ{oUM!w}",
+      "score": -5
+    },
+    {
+      "key": "513c5849eb3f",
+      "state": "72843b63979d",
+      "text": "csaw{Q>uy#gLk2N[5$j~KfP2KV#&1DCgMLiN]'I~@}",
+      "score": -6
+    },
+    {
+      "key": "513c584a873e",
+      "state": "72843b63972e",
+      "text": "csaw{A[C9N;D__GqC5z=QxHK!&k*2hj8Dk.~'v\"+P}",
+      "score": -6
+    },
+    {
+      "key": "d60bcd49bbfb",
+      "state": "72253b04f6c8",
+      "text": "csaw{:-um{_;&V~O\"S+7e`7y|kDCZ&R2BrkoPP2er}",
+      "score": -6
+    },
+    {
+      "key": "48ccac7d9ae7",
+      "state": "72849a639775",
+      "text": "csaw{)Kl:T`9K?XE ?-w)GN\")PrqR5HZxL0|78s96}",
+      "score": -9
+    },
+    {
+      "key": "513358d2ffcd",
+      "state": "72843b0497ca",
+      "text": "csaw{<P6(zm;-&9-3aIN'UU9T=MvA9bo|CLMQ\\!84}",
+      "score": -9
+    },
+    {
+      "key": "7d476e08e124",
+      "state": "d184f963f6b0",
+      "text": "csaw{\"9UO!mi_w70[6%:Q(S-bUG%mvM6K<05*Yx_-}",
+      "score": -9
+    },
+    {
+      "key": "7d476e8191d3",
+      "state": "d184f963f639",
+      "text": "csaw{L.5S;?Zv<I;%O:l8cVDO63^10w|ufsZMy)6;}",
+      "score": -9
+    },
+    {
+      "key": "488f9c4e8609",
+      "state": "72849a04971e",
+      "text": "csaw{1@-Ga6=sr4;30:$EoLO1/#2%>fG8WSK4z7Q&}",
+      "score": -12
+    },
+    {
+      "key": "48ccaca2be2a",
+      "state": "72849a6397ea",
+      "text": "csaw{\\&Nr/q-VE{W_p4Do{OSm@u%gg@H+jVa<tkf|}",
+      "score": -13
+    },
+    {
+      "key": "488ff1f41a1b",
+      "state": "72849a04f6e8",
+      "text": "csaw{Z^'!EC-d,^THun.cr7MABE!9K@w_LrD}b.L}}",
+      "score": -14
+    },
+    {
+      "key": "2dfbe35cdac7",
+      "state": "d1259a639795",
+      "text": "csaw{Ig=[cQ4&i#>\\O=ZT!aLm/1jL'D9G)GiS_ Jq}",
+      "score": -15
+    },
+    {
+      "key": "5bd372b60fe6",
+      "state": "d1843b63f686",
+      "text": "csaw{:3ZS?><#Z[._QEFVn.v=l*HO$9UYr\\pn8FDq}",
+      "score": -15
+    },
+    {
+      "key": "38ec489b9dfa",
+      "state": "7225f96397da",
+      "text": "csaw{LFn?s}gf'`RN36(A?Fe\"]l4nKE>^K.Yc_9*M}",
+      "score": -16
+    },
+    {
+      "key": "7d476e6e0dfe",
+      "state": "d184f963f69e",
+      "text": "csaw{R=7fL@6p:wlSV ybL0x{JZ%:S8~NFP;A_+].}",
+      "score": -16
+    },
+    {
+      "key": "bfdc487c1d14",
+      "state": "7284f963978c",
+      "text": "csaw{@gkx7KP!\"j(>na$3TF[*f21MaEhHL;,R nZ^}",
+      "score": -16
+    },
+    {
+      "key": "488ff117662a",
+      "state": "72849a04f6cf",
+      "text": "csaw{A4\"bN:S3\\4*D=n=7_SCt'+aKZD&#,r`NRB4K}",
+      "score": -17
+    },
+    {
+      "key": "7c4b53d6cbf5",
+      "state": "d1253b63978b",
+      "text": "csaw{?tYOY=SzW%6$2RKg2zV[tN3]i(Wy4:+Y=<}K}",
+      "score": -17
+    },
+    {
+      "key": "2dfbaead22b0",
+      "state": "d1259a63f62c",
+      "text": "csaw{?GX.j8$/cH1Q4a{4 Xzx'=/B^jrJO-t92UK|}",
+      "score": -18
+    },
+    {
+      "key": "5b2816ba3b91",
+      "state": "d1843b04f6d6",
+      "text": "csaw{H95.2!yozTCC8,g76.Q{j$p]OZvH\"s=3)M-[}",
+      "score": -19
+    },
+    {
+      "key": "513358853b40",
+      "state": "72843b049775",
+      "text": "csaw{)l?>G+,q]1t0Y9'Y0B'*MIKL<=9+M2RB9Y4f}",
+      "score": -20
+    },
+    {
+      "key": "d6b8dd9b0752",
+      "state": "72253b63f6d2",
+      "text": "csaw{D61E(xUu#.!E)I/aaF68y)-]1Y4P4:*=j091}",
+      "score": -22
+    },
+    {
+      "key": "488ff15602fd",
+      "state": "72849a04f69a",
+      "text": "csaw{N}4_OFN%LMFwVSi'|H\\oU}({!UR@?M}!gvSI}",
+      "score": -23
+    },
+    {
+      "key": "38ec482ec9f5",
+      "state": "7225f963978b",
+      "text": "csaw{?u]B];A+m9Q6eHqOp'!g/zVM#_SLp+o/Q:W^}",
+      "score": -24
+    },
+    {
+      "key": "5b28165abbf1",
+      "state": "d1843b04f6f6",
+      "text": "csaw{ht&~BRhvfnf{>9&<q;wrFmtLt'a*<E@JK@5}}",
+      "score": -24
+    },
+    {
+      "key": "bf03852325ae",
+      "state": "7284f904f69b",
+      "text": "csaw{OSBaLj)2.;whY{C/\\LRD5D-k/x=z\\^}B^HEE}",
+      "score": -24
+    },
+    {
+      "key": "48ccac62be6a",
+      "state": "72849a6397aa",
+      "text": "csaw{^<Z*;U#TGI\"@/6IIB8Dv_=F.J%srlebn<4q;}",
+      "score": -25
+    },
+    {
+      "key": "d6b8d0264b65",
+      "state": "72253b63975b",
+      "text": "csaw{nKJAW~$\"Z|K~b_: 6O#~s+x1@2gYrTQ+l@CQ}",
+      "score": -25
+    },
+    {
+      "key": "5e772666c6c2",
+      "state": "d1849a63f6e2",
+      "text": "csaw{T6iiAs:&sYIX=8[-O%KY9R\\:._,4&>IeY9(y}",
+      "score": -27
+    },
+    {
+      "key": "7dac26c1d528",
+      "state": "d184f904f675",
+      "text": "csaw{):FsBK#.(2/}Y=>|11HQ-[qnlriERp0H9c(3}",
+      "score": -28
+    },
+    {
+      "key": "48cce57e767a",
+      "state": "72849a63f63a",
+      "text": "csaw{M0{56P@]=WaUQ4R= 76:B|%Tk{miDB7>Q,9`}",
+      "score": -30
+    },
+    {
+      "key": "513c51564f46",
+      "state": "72843b63f626",
+      "text": "csaw{9}6!F7S({#9E--Hp4YqlnC~-&3k\\6}9Ir_V\"}",
+      "score": -30
+    },
+    {
+      "key": "38ec4873ed22",
+      "state": "7225f96397b2",
+      "text": "csaw{$^_F\"=a9PHS0?/V(?P1ui]1(NM>0H915,c^9}",
+      "score": -31
+    },
+    {
+      "key": "488f9c745a4b",
+      "state": "72849a049754",
+      "text": "csaw{g>E\\O\"A,jd8)x<Oj_P)iYuG#.]*>x*)uSWTo}",
+      "score": -33
+    },
+    {
+      "key": "5ea0322cdac3",
+      "state": "d1849a04f6f0",
+      "text": "csaw{bE=?6_S)`U|B@Y& LU}0_6$WNxS`U?*A%OsX}",
+      "score": -35
+    },
+    {
+      "key": "5ea032845acb",
+      "state": "d1849a04f6d8",
+      "text": "csaw{J_iN)&3K`'fG,p[vF!,tTWd2<T3&_@_MU.>$}",
+      "score": -35
+    },
+    {
+      "key": "bf0394124519",
+      "state": "7284f904976e",
+      "text": "csaw{\";\\x7_-O^I>Ry#$N_OqK8ZOG~'\\S6%YV>b/L}",
+      "score": -35
+    },
+    {
+      "key": "38ec485fc5ee",
+      "state": "7225f96397be",
+      "text": "csaw{0SX+3Znm#VYs|RrPr/CkB\"`/$ `cHD16#]\"`}",
+      "score": -36
+    },
+    {
+      "key": "513c5168e324",
+      "state": "72843b63f6b0",
+      "text": "csaw{\"N6<!^YbH$xtT{A7{`[2[zl@L+x4SQUrw@\\K}",
+      "score": -36
+    },
+    {
+      "key": "5b287b64abb7",
+      "state": "d1843b0497f8",
+      "text": "csaw{j;A6WA\"]9s8/iVJ)] J*ES[`Y4NM<m[%MoO(}",
+      "score": -36
+    },
+    {
+      "key": "bfdc4812ede2",
+      "state": "7284f9639772",
+      "text": "csaw{&1$'>GS*[9q;CyLJ! N_hT$b;E/PgKPG$ 06}",
+      "score": -36
+    },
+    {
+      "key": "7dac265155f8",
+      "state": "d184f904f685",
+      "text": "csaw{9N1faf#C7OC8>;+n)~?$^!p2cMZIXBk[\\+A[}",
+      "score": -37
+    },
+    {
+      "key": "d6b8d0109b47",
+      "state": "72253b639715",
+      "text": "csaw{(P`UIE-&}c!\\%1G4pU_2_@wwY!4h1?wM'^H;}",
+      "score": -37
+    },
+    {
+      "key": "bfdccd4d215f",
+      "state": "7284f963f6a5",
+      "text": "csaw{Y9f>e~9gRK:@8'/-TyK]8S:)Y'ae1>dE1o+]}",
+      "score": -38
+    },
+    {
+      "key": "38ec4812c9c1",
+      "state": "7225f963976f",
+      "text": "csaw{#E#a?P05'`Z.5?{Vi!QV*+p)9'D4S0lvT,8V}",
+      "score": -39
+    },
+    {
+      "key": "d6b8dddb0712",
+      "state": "72253b63f612",
+      "text": "csaw{%0 h^,u9J[R@#z`*e4hBJ~8\"0C:4^C3HxbF\"}",
+      "score": -39
+    },
+    {
+      "key": "38ec81923da9",
+      "state": "7225f963f67b",
+      "text": "csaw{/%#`'L%aD*!VA>h|S_yC^H7\"y(TAop)U1J\\n}",
+      "score": -44
+    },
+    {
+      "key": "5ea0329d36d8",
+      "state": "d1849a04f6e5",
+      "text": "csaw{W,|)uAN\"`TXw?A^P=R.}O:3W:;m`KtEV?T5W}",
+      "score": -44
+    },
+    {
+      "key": "d384407e3a2d",
+      "state": "72259a6397d3",
+      "text": "csaw{E\\o.z5/\\;mu@+XJ>\\C(x`\\t\"[neM8RLH&_Qy}",
+      "score": -44
+    },
+    {
+      "key": "92ab6b8ab9a9",
+      "state": "d125f9639707",
+      "text": "csaw{y.Owc TO3=X \"+fBD?<X;2!^UJ>`QE3PW^+g}",
+      "score": -45
+    },
+    {
+      "key": "d34b340c9a70",
+      "state": "72259a049765",
+      "text": "csaw{x9)CGf&3n?C'0GT:#'guSXi(fMa:`].x&p){}",
+      "score": -45
+    },
+    {
+      "key": "d60bcdce272e",
+      "state": "72253b04f61b",
+      "text": "csaw{.cO6O!{/WMV>S4w6{;Zz4M N@v:y(L=:ZE+`}",
+      "score": -46
+    },
+    {
+      "key": "d6b8d06db760",
+      "state": "72253b639748",
+      "text": "csaw{[bs;x VP }m=pa1~#8Pg'$.{3p'S:TQqT#9K}",
+      "score": -46
+    },
+    {
+      "key": "38ec8173a582",
+      "state": "7225f963f6a2",
+      "text": "csaw{V|#)^Z4^DK)]uC6a*M6 8u7*g)MT\\/VTOH/@}",
+      "score": -47
+    },
+    {
+      "key": "48cce5680204",
+      "state": "72849a63f610",
+      "text": "csaw{#43%5Rs]^1i<hh?/d4*qY\"_\"i|UNgJ )Rg,'}",
+      "score": -47
+    },
+    {
+      "key": "5bd3728553f3",
+      "state": "d1843b63f659",
+      "text": "csaw{l[+%y[&\\F$laV8]<%+3K1P&F7`<Ck8UKjw.A}",
+      "score": -47
+    },
+    {
+      "key": "92ab6b3135e8",
+      "state": "d125f9639780",
+      "text": "csaw{4\"BO>0/\"3C]^-:O%VCV&&eJ=UHTQO&``O28R}",
+      "score": -47
+    },
+    {
+      "key": "bf03948a45c1",
+      "state": "7284f9049726",
+      "text": "csaw{9BiUq!~8[Ev}O6[`$Vy!4P{a.H&V,^`8\"Hmt}",
+      "score": -47
+    },
+    {
+      "key": "5bd3727bf7b5",
+      "state": "d1843b63f6e7",
+      "text": "csaw{YJm)!fx4_JNLa$`'zfp\"&a`|&^H+0:FtE],[}",
+      "score": -54
+    },
+    {
+      "key": "5ea05fdb4e2a",
+      "state": "d1849a049793",
+      "text": "csaw{Gmnhv1:23[`G)y0<`bF CH+nTCE?-$:v.(`/}",
+      "score": -56
+    },
+    {
+      "key": "7dac37b6fdcd",
+      "state": "d184f90497ca",
+      "text": "csaw{<[-$myolS,i.*6ZZn9*Rh'sz%56|@K%._?>z}",
+      "score": -56
+    },
+    {
+      "key": "d34b5d959a7b",
+      "state": "72259a04f648",
+      "text": "csaw{[O!0f:{]6U\"V%l58LU?U*G&W%AaN}KE=,*Z#}",
+      "score": -56
+    },
+    {
+      "key": "5ea05fc88a37",
+      "state": "d1849a049778",
+      "text": "csaw{,B*OI=*mqe\"!II((C5`|6D64)s`5-d/V[bR`}",
+      "score": -57
+    },
+    {
+      "key": "513c517a4772",
+      "state": "72843b63f6f2",
+      "text": "csaw{dTI`J?`*-~u(k}+{H_k)LV|T|eBN|=yDB+`c}",
+      "score": -62
+    },
+    {
+      "key": "38f7954d91bf",
+      "state": "7225f904f654",
+      "text": "csaw{g'gh9LUQ]$av;\"#Z4^pjW?\\!>T`S,$P>N\\!4}",
+      "score": -65
+    },
+    {
+      "key": "513c51073fe9",
+      "state": "72843b63f6bb",
+      "text": "csaw{-NTz(&d~[LQm<D1>09C] bM'G*$Y9'./#_`Z}",
+      "score": -66
+    },
+    {
+      "key": "92e4b653f9c9",
+      "state": "d125f904f6ce",
+      "text": "csaw{@%>,OD*lX<a#{v`\"6@,^\"g7A^MGVL48`k)6k}",
+      "score": -67
+    },
+    {
+      "key": "92ab6b96f90d",
+      "state": "d125f9639733",
+      "text": "csaw{Fc @Z,;abu%\"*^fr]aOY<H-_D=@m.B^-ru%(}",
+      "score": -72
+    },
+    {
+      "key": "7c4b5e1033d7",
+      "state": "d1253b63f6ed",
+      "text": "csaw{_!4m+.0/MY1[##eS$A'\\/C\\|7}[3q=G*:wqM}",
+      "score": -77
+    },
+    {
+      "key": "92e4fb0ebd12",
+      "state": "d125f904976b",
+      "text": "csaw{~%}M#&3&~83WMOw1/'a[QQ' Ta>))'3]6@Vv}",
+      "score": -78
+    },
+    {
+      "key": "92e4fbd919cf",
+      "state": "d125f9049780",
+      "text": "csaw{4$*]]1<-O0A<(!'$:\\ *!Kjl:%\\l+^Yb O1j}",
+      "score": -116
+    }
+  ]
+}
