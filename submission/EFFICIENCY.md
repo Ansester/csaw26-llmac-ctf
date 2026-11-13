@@ -1,70 +1,64 @@
-# Efficiency report — tokens & wall-time
+# Efficiency report
 
-**Method.** "Exact" figures are taken from the Workflow tool's own completion
-telemetry (`/workflows` logs and the workflow completion notifications:
-`subagent_tokens`, `duration_ms`, `agent_count`, `tool_uses`). Per-agent token/
-time figures for the final verification workflow are from those logs. Figures
-marked **(est.)** are approximations: the per-category autonomous solving sessions
-ran in detached tmux panes whose token meters were not captured on this side, so
-they are estimated from gzipped transcript size as a rough proxy and should not be
-read as exact. Durations that overlap (parallel agents/tracks) do not sum to
-wall-clock.
+## How these numbers were produced (so they're reproducible)
+Parsed every committed transcript (`transcripts/*.jsonl.gz`) and every workflow agent log
+(`transcripts/solved/workflows/*/*.jsonl`), read each assistant message's reported
+`usage`, and **deduplicated by message id (keeping the maximum output per id)** so
+streamed/re-emitted copies aren't counted twice. The script is in our notes; anyone can
+re-run it over the committed logs and get the same totals.
 
-## Final verification workflow "v4" (rev + misc) — EXACT
+Two honest caveats:
+- **Output tokens are the clean metric.** Each assistant message has a unique id, so the
+  output total is not inflated by shared context.
+- **Input is reported separately and is an upper bound.** It sums `input_tokens` +
+  `cache_read` + `cache_creation`, which is dominated by **prompt-cache reads** and by
+  history that is **inherited/shared across sessions** (e.g. orchestration history replayed
+  into a category session). So the input figure massively over-counts distinct input and
+  should be read as "context volume processed," not "unique input."
 
-Run `wf_d74193e1-79f`. Totals: **1,187,206 subagent output tokens**,
-**wall-clock 2h16m39s** (8,198,667 ms), 6 agents (6 done, 0 errors), 318 tool
-uses.
+## Totals (all sessions + all workflow agents)
+| metric | value |
+|---|---|
+| Model **output** tokens (deduped) | **≈ 2.62 million** (2,622,726) |
+| Input + cache tokens (upper bound, cache-inflated) | ≈ 378 million |
+| Distinct models used | `claude-opus-5-5`, `claude-opus-4-8`, `claude-sonnet-5-5`, `claude-sonnet-5` (Claude Code agents) + ChatGPT (2nd LLM, one challenge) |
 
-| agent | output tokens | wall-time | outcome |
-|---|---|---|---|
-| `rev:engine-inversion` | 347.6k | 1h12m | engine reconstructed + 9a3f decoy validated; reported flag *not uniquely determinable* (blocked) |
-| `rev:live-confirm` | 282.3k | 52m45s | rebuilt engine from the decrypted patch, reproduced 9a3f decoy byte-for-byte; same "underdetermined" conclusion |
-| `misc:locate` | 108.6k | 9m12s | localized the 7–8 bursts (25.17–32.47 s, R channel) |
-| `misc:decode` | 236.9k | 34m57s | ring-mod/shift characterization; frag4 not recovered |
-| `rev:verify` + `misc:verify` (combined) | 211.8k *(derived: total − the four above)* | — | adversarial verification |
+(A `<synthetic>` marker also appears in the logs — that is a harness-injected synthetic
+record, not a model, and is excluded from "models used".)
 
-Note: the two rev agents here independently **confirmed the engine** (a 4th
-corroboration of the committed solve) but stopped short of the flag because they
-treated the EXPORT argument as secret; see `solutions/rev/music_sec_dept/WRITEUP_music_sec_dept.md`.
-
-## Superseded exploratory workflows — estimate
-
-Four earlier workflow runs were launched and **stopped early** when human
-course-corrections redirected the approach (ELF-disassembly → patch-graph →
-run-the-patch → known-prefix inversion). They exist under
-`…/subagents/workflows/`: `wf_de5c1733-165`, `wf_69f0ab0e-736`,
-`wf_1de460aa-b8f`, `wf_8eae1379-a5c`. Their agents were cancelled mid-flight, so
-no clean per-run totals were recorded. **(est.)** combined on the order of
-~1–2M additional output tokens across these redirects; exact figures not
-recoverable.
-
-## Per-category autonomous solving sessions — estimate (transcript-size proxy)
-
-Six detached Claude Code sessions (one tmux pane per category) solved their
-categories. Token meters were not captured on the orchestration side; the figures
-below are **(est.)** from gzipped transcript size (`submission/transcripts/`),
-which correlates loosely with token volume. The larger misc/rev/web transcripts
-reflect the hard, re-attempted challenges (`12345678`, `music_sec_dept`, and the
-6-challenge web set), not proportional success.
-
-| category (transcript) | gz size | relative effort (est.) |
+## By work group (output tokens / input+cache)
+| group | output tokens | input+cache (upper bound) |
 |---|---|---|
-| misc (`e8319214`, `408d5b67`, `0e07121a`) | 6.3M + 3.1M + 1.7M | high (12345678 re-attempts) |
-| web (`113c6bc7`, `4ce97508`, `a23658e3`) | 3.7M + 1.9M + 0.4M | high (6 challenges) |
-| rev (`4ab23db4`, `3a73e524`) | 2.7M + 0.4M | high (music_sec_dept) |
-| crypto (`2235af97`) | 1.5M | medium |
-| pwn (`8500a4c9`) | 0.4M | medium |
-| forensics (`174d8778`) | 0.3M | low–medium |
-| orchestration/HITL (`a9a173db`, `8bd4de6c`) | 0.2M + 0.1M | coordination |
+| multi-agent workflows (the 2 hardest challenges) | 1,517,420 | 112.0 M |
+| web (6 challenges) | 320,162 | 140.4 M |
+| rev (3) | 269,952 | 33.6 M |
+| orchestration / HITL (main) | 253,422 | 31.2 M |
+| misc (3) | 170,023 | 43.3 M |
+| pwn (3) | 33,395 | 7.5 M |
+| crypto (4) | 29,765 | 5.6 M |
+| forensics (4) | 23,738 | 3.5 M |
+| orchestration (misc VM sessions) | 4,849 | 0.7 M |
 
-## Headline
+**What this shows:** the "easy" categories were cheap (crypto/forensics/pwn each under ~35k
+output tokens for all their challenges). Cost concentrated in (a) the two hardest
+challenges' multi-agent workflows (~1.5M output — the adversarial verify fan-out is the
+expensive part), (b) web (six challenges, several with live services), and (c) the
+human-in-the-loop orchestration.
 
-- Genuine verification of the single hardest remaining challenge
-  (`rev/music_sec_dept`) cost **~1.19M tokens / 2h17m** of multi-agent work in the
-  final pass — and still returned an honest "underdetermined" from the from-scratch
-  agents; the committed solve came from an externally-supplied derivation that was
-  then **reproduced and cross-checked here** against the real artifacts.
-- The genuine-solve discipline (adversarial verifiers re-running candidate scripts;
-  rejecting hardcoded/back-fit answers) is the main token cost multiplier, and the
-  main reason no wrong flag was submitted.
+## Wall-clock (where recorded)
+Per-challenge wall-time isn't cleanly separable because each category ran as one continuous
+session over multiple challenges, with overnight idle gaps. Recorded spans we can cite:
+- The final multi-agent workflow (`ctf-final-two`, covering rev/music_sec_dept **and** the
+  blocked audio challenge jointly): **≈ 2 h 16 m**, with per-agent spans of
+  rev:engine-inversion ≈ 1 h 12 m, rev:live-confirm ≈ 52 m, misc:decode ≈ 35 m,
+  misc:locate ≈ 9 m.
+- Overall effort spanned ~2 calendar days (start to submission) including two interruptions
+  (an out-of-memory crash and an overnight VM reboot), both recovered with ~no lost work
+  because every agent committed continuously.
+
+## Per-challenge attribution (limitation, stated plainly)
+We do **not** publish a precise per-challenge token number: the category sessions each
+solved several challenges in one log, and the final workflow worked on rev **and** the
+blocked audio challenge together, so attributing its 1.5M output tokens to a single
+challenge would be wrong. Category-level output tokens above are the honest granularity the
+logs support.
