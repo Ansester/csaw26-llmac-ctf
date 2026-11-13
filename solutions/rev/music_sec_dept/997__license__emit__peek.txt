@@ -1,0 +1,9 @@
+0: #X obj 150 100 inlet;
+1: #X obj 170 173 f 248;
+2: #X msg 170 210 \; cv2 \$1 \; seekh in \; padbus out \; , f 16;
+3: #X obj 150 310 outlet;
+4: #X obj 150 130 t a b;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 4 0 3 0;
+#X connect 4 1 1 0;

@@ -1,0 +1,10 @@
+0: #X obj 220 450 expr $i1 ^ $i2;
+1: #X obj 300 410 t b f;
+2: #X obj 220 370 inlet;
+3: #X obj 300 370 inlet;
+4: #X obj 220 480 outlet;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
