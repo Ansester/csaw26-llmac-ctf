@@ -106,3 +106,26 @@ Verified here against the real challenge artifacts (SHA-256 of `session.bin`
   consumes it.
 * The ROM also contains a `KEY> … DENIED … flag{…}` **decoy** that a wrong key
   produces; it is deliberately not submitted.
+
+## Independent in-session reproduction (4th confirmation) and honest caveat
+
+An independent in-session agent (the "v4" verification workflow) rebuilt the
+render engine **from scratch** from the decrypted patch and reproduced the
+`EXPORT 9a3f` decoy **byte-for-byte** on its own rig (`vm.pd`, byte-identical to
+`hidden_patch.pd` apart from the transport port). Both agents independently
+re-derived the exact mechanism — `out[i] = 32 + (((gen[i] + tap[i]) & 255) % 95)`,
+the invertible `0x8d`/`0x4f` key-mix, the 12-hex-KEY → 6-byte read, the 10-hex
+`EXPORT` argument, and **full key avalanche**. This is a **fourth independent
+confirmation of the engine**, alongside the decoy checkpoint, the native pd-l2ork
+run, and the emulator replay.
+
+**Caveat (stated honestly):** the solve is **not forced by the `csaw{`/`}` public
+structure alone.** It additionally (a) fixes the `EXPORT` argument to the
+artifact-exposed banner value `9a3f......`, and (b) selects, among the **87**
+`}`-terminating candidates, the **uniquely English-readable** one (generic
+alphabet score 67 vs 61 for the runner-up) — then confirms it by rendering it
+through the real pd-l2ork engine with the recovered KEY. Two from-scratch agents
+that instead treated the EXPORT tail as secret reported "**blocked — not uniquely
+determinable from the prefix alone**." The committed result is genuine and
+multiply corroborated, but the uniqueness rests on the readability selection plus
+the native render, **not** on a hard cryptographic inversion from the prefix.

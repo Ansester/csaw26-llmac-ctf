@@ -1,22 +1,16 @@
-# CSAW 2026 Quals — LLMAC_DB solutions
+# CSAW 2026 Quals (NYU LLM-CTF DB) — LLM-driven, HITL. 22/23 solved, 1 honest blocker.
 
-Working repo for https://github.com/NYU-LLM-CTF/CSAW26_LLMAC_DB (2026/CSAW-Quals).
+- **[SUBMISSION.md](SUBMISSION.md)** — methodology, genuine-solve rule, decoys rejected
+- **[solutions/FLAGS.md](solutions/FLAGS.md)** — consolidated flag index (all 23 challenges)
+- **[submission/transcripts/](submission/transcripts/)** — gzipped proof session transcripts + mapping
+- **[submission/EFFICIENCY.md](submission/EFFICIENCY.md)** — token + wall-time report
+- **[prompts/](prompts/)** — the per-category seed prompts the autonomous sessions ran from
 
-Staging ground only — will be re-uploaded to the official submission repo later.
-
-## Layout
-- `solutions/<category>/solve_<name>.py` — reproducible solver (run it, it prints the flag)
-- `solutions/<category>/WRITEUP_<name>.md` — vuln + technique + how to run
-- `solutions/<category>/BLOCKER_<name>.md` — only for genuinely blocked challenges, with the exact reason
-- `solutions/FLAGS.md` — master table, built once the category is done
-- `prompts/` — the operating prompts used to drive the solve (kept for reproducibility)
-
-## Ground rules (see prompts/MEGA_PROMPT.md for the full version)
-- Genuine solves only. Every flag must come from running a script against a live
-  target or decrypting/deriving it — never hardcoded, never pattern-matched.
-- This repo's upstream (CSAW26_LLMAC_DB) ships a reference `solve.py`/`writeup.md`
-  for 15 of the 22 challenges. Treat those as a hypothesis: run them against a
-  freshly-built instance and independently confirm the flag, don't just copy them.
-- Several challenges ship decoy flags in correct `csaw{...}` format specifically to
-  catch agents pattern-matching instead of verifying (e.g. misc/keep_walking_forward's
-  "AI Detection Flags"). A flag counts only when the target/artifact itself confirms it.
+| category | solved | solutions |
+|---|---|---|
+| crypto | 4 / 4 | [solutions/crypto/](solutions/crypto/) |
+| forensics | 4 / 4 | [solutions/forensics/](solutions/forensics/) |
+| misc | 2 / 3 (`12345678` blocked) | [solutions/misc/](solutions/misc/) |
+| pwn | 3 / 3 | [solutions/pwn/](solutions/pwn/) |
+| rev | 3 / 3 | [solutions/rev/](solutions/rev/) |
+| web | 6 / 6 | [solutions/web/](solutions/web/) |
