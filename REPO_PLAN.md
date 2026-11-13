@@ -25,7 +25,7 @@ One page so a grader lands and immediately knows where everything is:
   the decoys-rejected section), `submission/transcripts/` (proof), `solutions/<cat>/`
   (per-challenge solvers + writeups), `prompts/` (the autonomous-agent briefs).
 - A 6-row category table (crypto 4/4, forensics 4/4, web 6/6, pwn 3/3, misc 2/3,
-  rev 2/3) — literals in FLAGS.md.
+  rev 3/3) — literals in FLAGS.md.
 Commit to master; push. (The VM Claude or you can add this — it's the one missing
 top-level file.)
 

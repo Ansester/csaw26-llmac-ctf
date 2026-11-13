@@ -139,7 +139,7 @@ blocker."
 
 **[SLIDE 9 — Results + efficiency] (8:05)**
 "The scoreboard: 22 of 23 — crypto four of four, forensics four, web six, pwn three,
-misc two of three, rev two of three. Every solved flag is backed by an oracle hit or
+misc two of three, rev three of three. Every solved flag is backed by an oracle hit or
 a script-run derivation, and we shipped the full transcripts *and* the autonomous
 agent trajectories as proof. On efficiency — the hardest challenge, music_sec_dept,
 took its solver workflow about two and a quarter hours and a few hundred thousand

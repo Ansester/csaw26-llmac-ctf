@@ -34,7 +34,7 @@ SLIDES (titles → key points; expand the notes yourself):
    decoy render treated as cross-check only. Enforced structurally with adversarial
    verifier agents that re-run candidates and reject anything not genuinely derived.
 6. Results — 22/23. Category table: crypto 4/4, forensics 4/4, web 6/6, pwn 3/3,
-   misc 2/3, rev 2/3. Every solved flag backed by an oracle hit or a script-run
+   misc 2/3, rev 3/3. Every solved flag backed by an oracle hit or a script-run
    derivation.
 7. Deep dive — web/flagchecker. A custom `__eq__` sleeps ~10 ms per matching leading
    char (a timing oracle), armed only by a crafted Chrome UA (build×patch = 1,000,000).
