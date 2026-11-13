@@ -67,6 +67,29 @@ behind the run. The actual prompts are in `framework/prompts/`; the solvers are 
 - **misc (audio):** `numpy`/`scipy`/`Pillow` (spectrogram + bitmap decode), `faster-whisper`
   (ASR), demodulation experiments.
 
+## Challenges that shaped our approach & what we learned
+Concrete moments where a problem changed how we built the agents (the rules ask how
+specific challenges affected our agent engineering):
+- **An out-of-memory crash killed all six agents early on** → we made *commit-and-push
+  after every step* and *one git branch per category* non-negotiable. It paid off again
+  when the VM rebooted overnight — zero work lost both times.
+- **`music_sec_dept` needed a runtime we couldn't stand up** (Purr-Data; Docker was
+  unavailable) → we learned that *environments, not analysis, were our real blockers*, and
+  pivoted from "run the real thing" to a from-scratch offline emulator validated against a
+  known checkpoint.
+- **`flagchecker`'s vulnerability was hidden by a dependency version** (a `validators` API
+  change made every request fail with 400) → the agent had to fix the environment before
+  the bug was even visible; dependency pinning matters as much as the exploit.
+- **Our first misc audio solver hard-coded a fragment** (a back-fit) → we added the
+  **adversarial-verifier** step to the workflow specifically to catch answers that aren't
+  genuinely derived; it forced us to honestly leave the 4th fragment unsolved.
+- **Our own first self-audit was too generous** (it missed a plaintext answer sitting in a
+  prompt) → we built a machine-readable manifest and a deeper second audit, and corrected
+  the disclosure in writing.
+- **The multi-LLM episode** (a second model web-searched a recipe) → we tightened the rule
+  that a committed derivation must be *answer-agnostic*, and we disclose the exposure rather
+  than hide it.
+
 ## What we do NOT claim about the framework
 The "framework" is Claude Code and its built-in Workflow facility, orchestrated with our
 prompts — **not** a from-scratch agent framework. The workflow *scripts* themselves ran in
