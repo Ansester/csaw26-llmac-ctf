@@ -2,9 +2,9 @@
 
 **SegfaultObservers · First place, MENA region**
 
-We entered as a team of four: [Ashmit Mukherjee](https://github.com/Ansester), [Akshith Karthik](https://github.com/Ak1016-stack), [Maryam Emaan Fiyaz](https://www.linkedin.com/in/maryamemaan), and [Aadil Chasmawala](https://github.com/Aarz1401).
+Our team was [Ashmit Mukherjee](https://github.com/Ansester), [Akshith Karthik](https://github.com/Ak1016-stack), Maryam Emaan Fiyaz, and [Aadil Chasmawala](https://github.com/Aarz1401).
 
-This repository contains our work for the [November finals](https://csaw.io/competition/llm-ctf-attack-competition) at NYU Abu Dhabi. The organizers gave finalists the 2026 challenge set after a separate qualifying submission using challenges from the 2025 database.
+This repository contains our work for the November finals at NYU Abu Dhabi. The organizers gave finalists the 2026 challenge set after a separate qualifying submission using challenges from the 2025 database.
 
 We assigned one Claude Code agent to each of six challenge categories. For the hardest problems we tried competing approaches and asked a separate agent to check the proposed solution. In one audio challenge, the check showed that the decoder could reproduce a known part of the flag without deriving it from the recording. We left that challenge unsolved.
 
